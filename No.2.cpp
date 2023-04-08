@@ -4,20 +4,24 @@ using namespace std;
 
 int main()
 {
-    int count = 0;
-    string a, b, temp = { 0 };
+    int i = 0, j = 0, count = 0;
+    string keyword, data, temp;
 
-    cin >> a;
-    cin >> b;
-    for (int i = 0; i < a.length() - b.length(); i++) {
-        for (int j = 0; j < b.length(); j++) {
-            temp[j] = b[i];
+    cin >> keyword;
+    cin >> data;
+
+    for (i = 0; i < data.length() - keyword.length() + 1; i++) {
+        for (j = 0; j < keyword.length(); j++) {
+            temp = temp + data[i + j];
         }
-        if (temp == a) {
+
+        if (temp == keyword) {
             count += 1;
         }
-        temp = { 0 };
+
+        temp = "";
     }
+
     cout << count << endl;
 
     return 0;
